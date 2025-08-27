@@ -1,0 +1,115 @@
+/* 布局：左画布 + 右工具栏（纵向居中） */
+.editor-wrap {
+  display: flex;
+  gap: 28px;
+  align-items: center;        /* 工具栏与画布垂直居中 */
+  justify-content: flex-start;
+  min-height: 72vh;
+  padding: 12px 8px;
+}
+
+/* 画布容器（加边框和阴影，更像画板） */
+.canvas {
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+  overflow: hidden;           /* 防止内部溢出 */
+}
+
+/* 右侧工具卡片 */
+.tools {
+  width: 320px;
+  background: rgba(255,255,255,.86);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.10);
+  padding: 18px 16px;
+}
+
+.tools h1 {
+  margin: 0 0 12px;
+  font-size: 24px;
+}
+
+/* 每一行工具控件 */
+.tool-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+/* 分割线 */
+.hr {
+  height: 1px;
+  margin: 12px 0;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,.12), transparent);
+  border: 0;
+}
+
+/* 通用按钮 & 选择器 */
+.btn, .sel {
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.14);
+  padding: 0 12px;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.btn:hover, .sel:hover {
+  filter: brightness(1.05);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* 禁用态 */
+.btn:disabled, .sel:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+/* 小标签 */
+.label {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* --- 各种按钮配色 --- */
+
+/* Split */
+.tools .btn-split {
+  background: linear-gradient(135deg, #fda085, #f6d365);
+  color: white;
+  border: none;
+  box-shadow: 0 6px 16px rgba(253,160,133,.35);
+}
+
+/* Merge */
+.tools .btn-merge {
+  background: linear-gradient(135deg, #a78bfa, #6366f1);
+  color: white;
+  border: none;
+  box-shadow: 0 6px 16px rgba(167,139,250,.35);
+}
+
+/* Save */
+.tools .btn-save {
+  background: linear-gradient(135deg, #34d399, #10b981);
+  color: white;
+  border: none;
+  box-shadow: 0 6px 16px rgba(16,185,129,.35);
+}
+
+/* Back */
+.tools .btn-back {
+  background: linear-gradient(135deg, #82d8cf, #82cfd8);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}

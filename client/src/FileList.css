@@ -1,0 +1,101 @@
+/* 页面柔和渐变背景与居中布局 */
+.page-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background:
+    radial-gradient(1200px 600px at 20% 20%, #ffffff 0%, #f7f7ff 40%, #f9f1ff 100%),
+    linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  background-blend-mode: screen, normal;
+  padding: 36px 18px;
+}
+
+/* 内容卡片 */
+.card {
+  width: min(720px, 92vw);
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+  padding: 28px 26px;
+}
+
+/* 标题行 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.title {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: .4px;
+}
+
+/* 文件列表 */
+.file-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px 14px;
+}
+.file-item a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: #ffffff;
+  color: #374151;
+  box-shadow: 0 1px 0 rgba(0,0,0,.05);
+  border: 1px solid rgba(0,0,0,.06);
+  transition: transform .1s ease, box-shadow .2s ease, background .2s ease;
+}
+.file-item a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  background: #f8fbff;
+}
+
+/* 创建一栏 */
+.create {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.label {
+  font-weight: 600;
+  margin-right: 6px;
+}
+.input {
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.14);
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,.04) inset;
+  min-width: 240px;
+}
+.btn {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  color: #0b3b4a;
+  background: linear-gradient(135deg, #9be7ff, #78bcff);
+  box-shadow: 0 6px 16px rgba(120,188,255,.35);
+  transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
+}
+.btn:hover { filter: brightness(1.02); }
+.btn:active { transform: translateY(1px); }
+
+.empty {
+  padding: 12px 0 18px;
+  opacity: .7;
+}
